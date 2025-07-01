@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class ViewPatientDetails {
 
-    public void viewAllPatientDetails() throws IOException, SQLException {
+    public void viewAllPatientDetails() {
 
         String string="select * from patient";
 

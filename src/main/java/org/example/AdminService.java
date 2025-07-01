@@ -4,6 +4,7 @@ import org.example.DoctorRelatedOperations.AddNewDoctor;
 import org.example.DoctorRelatedOperations.ViewDoctorDetails;
 import org.example.PatientRelatedOperation.AddNewPatient;
 import org.example.PatientRelatedOperation.UpdatePatientDetails;
+import org.example.PatientRelatedOperation.ViewPatientDetails;
 import org.example.TableCreation.CreateTables;
 
 import java.io.IOException;
@@ -54,11 +55,16 @@ public class AdminService {
            }
            case 5->{
                //view patient details
+               ViewPatientDetails viewDetails=new ViewPatientDetails();
+               viewDetails.viewAllPatientDetails();
 
+
+               System.out.println("Patient details by name: ");
+               viewDetails.viewPatientDetailsByName();
 
            }
            case 6->{
-                 //Update appointment status(booked,cancel,Completed)
+                 //Update appointment status (booked, cancel, Completed)
 
 
            }

@@ -2,8 +2,10 @@ package org.example.TableCreation;
 
 import org.example.ConnectionDetails;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class CreateTables {
 
@@ -35,7 +37,7 @@ public class CreateTables {
 
     public void createPatientTable(){
         String sql = "CREATE TABLE patient (" +
-                "patientId SERIAL PRIMARY KEY, " +
+                "patientId INT PRIMARY KEY, " +
                 "name VARCHAR(50) NOT NULL, " +
                 "gender VARCHAR(10) NOT NULL CHECK (gender IN ('Male','Female','Other')), " +
                 "age INT CHECK (age > 0), " +
@@ -63,11 +65,29 @@ public class CreateTables {
     }
 
 
-    public void createAppointmentTable(){
+    public void createAppointmentTable() {
 
-        String str="create table appointment (appointmentId int, doctorId int,patientId int," +
-                "date LocalDate, time LocalTime, Status varchar(10)";
+        String sql = "CREATE TABLE appointment (" +
+                "appointmentId SERIAL PRIMARY KEY, " +
+                "doctorId INT REFERENCES doctor(doctorId) ON DELETE CASCADE, " +
+                "patientId INT REFERENCES patient(patientId) ON DELETE CASCADE, " +
+                "date DATE NOT NULL, " +
+                "time TIME NOT NULL, " +
+                "status VARCHAR(20) CHECK (status IN ('Booked', 'Completed', 'Cancelled'))" +
+                ");";
 
+        try {
+            Connection connection = ConnectionDetails.establishConnection();
 
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            int n = preparedStatement.executeUpdate();
+
+            if (n == 0) {
+                System.out.println("Appointment table created successfully");
+            }
+        }catch (IOException | SQLException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
