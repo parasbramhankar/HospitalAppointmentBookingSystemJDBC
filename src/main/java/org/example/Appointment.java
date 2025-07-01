@@ -11,14 +11,14 @@ public class Appointment {
     private LocalTime time;
     private String status;
 
-    public Appointment(int appointmentId, int doctorId, int patientId, LocalDate date, LocalTime time, String status) {
-        this.appointmentId = appointmentId;
-        this.doctorId = doctorId;
-        this.patientId = patientId;
-        this.date = date;
-        this.time = time;
-        this.status = status;
-    }
+//    public Appointment(int appointmentId, int doctorId, int patientId, LocalDate date, LocalTime time, String status) {
+//        this.appointmentId = appointmentId;
+//        this.doctorId = doctorId;
+//        this.patientId = patientId;
+//        this.date = date;
+//        this.time = time;
+//        this.status = status;
+//    }
 
     public int getAppointmentId() {
         return appointmentId;
