@@ -28,9 +28,12 @@ public class App
                    adminOperation.operations();
                    break;
             case 2:
+                  DoctorService doctorService=new DoctorService();
 
                 break;
-            case 3: break;
+            case 3:
+                PatientService patientService=new PatientService();
+                break;
         }
     }
 }

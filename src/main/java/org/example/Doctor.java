@@ -3,18 +3,18 @@ package org.example;
 public class Doctor {
     private int doctorId;
     private String name;
-    private Specialization specialization;
+    private String specialization;
     private String phone;
     private String email;
 
 
-    public Doctor(int doctorId, String name, Specialization specialization, String phone, String email) {
-        this.doctorId = doctorId;
-        this.name = name;
-        this.specialization = specialization;
-        this.phone = phone;
-        this.email = email;
-    }
+//    public Doctor(int doctorId, String name, String specialization, String phone, String email) {
+//        this.doctorId = doctorId;
+//        this.name = name;
+//        this.specialization = specialization;
+//        this.phone = phone;
+//        this.email = email;
+//    }
 
     public int getDoctorId() {
         return doctorId;
@@ -32,11 +32,11 @@ public class Doctor {
         this.name = name;
     }
 
-    public Specialization getSpecialization() {
+    public String getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(Specialization specialization) {
+    public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
 
