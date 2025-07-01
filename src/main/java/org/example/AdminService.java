@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.AppointmentRelatedOperations.DeleteAppointment;
+import org.example.AppointmentRelatedOperations.UpdateAppointmentStatus;
+import org.example.AppointmentRelatedOperations.ViewAllAppointment;
 import org.example.DoctorRelatedOperations.AddNewDoctor;
 import org.example.DoctorRelatedOperations.ViewDoctorDetails;
 import org.example.PatientRelatedOperation.AddNewPatient;
@@ -27,7 +30,7 @@ public class AdminService {
         System.out.println("7. view appointment history of any patient");
 
         //run this only one time if you are run this code-first time
-        System.out.println("9. Create the tables of Patient,Doctor,Appointment");
+        System.out.println("8. Create the tables of Patient,Doctor,Appointment");
         int choice= scanner.nextInt();
 
         switch (choice){
@@ -58,20 +61,27 @@ public class AdminService {
                ViewPatientDetails viewDetails=new ViewPatientDetails();
                viewDetails.viewAllPatientDetails();
 
-
                System.out.println("Patient details by name: ");
                viewDetails.viewPatientDetailsByName();
 
            }
            case 6->{
                  //Update appointment status (booked, cancel, Completed)
-
+               UpdateAppointmentStatus updateAppointmentStatus=new UpdateAppointmentStatus();
+               updateAppointmentStatus.updateAppointment();
 
            }
            case 7->{
+               ViewAllAppointment viewAllAppointment=new ViewAllAppointment();
+               viewAllAppointment.displayAppointment();
+           }
+           case 9->{
+               DeleteAppointment deleteAppointment=new DeleteAppointment();
+               deleteAppointment.deleteAppointment();
+           }
+           case 8->{
                //create all the table
                 CreateTables createTable=new CreateTables();
-
                 createTable.createDoctorTable();
                 createTable.createPatientTable();
                 createTable.createAppointmentTable();
