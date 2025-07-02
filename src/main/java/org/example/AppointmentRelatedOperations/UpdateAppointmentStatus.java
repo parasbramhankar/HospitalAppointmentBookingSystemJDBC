@@ -11,8 +11,7 @@ public class UpdateAppointmentStatus {
     Scanner scanner=new Scanner(System.in);
 
     public void updateAppointment(){
-        String str="update appointment status=complete where appointmentId=?";
-
+        String str = "update appointment set status='Completed' where appointmentId=?";
         try{
             Connection connection= ConnectionDetails.establishConnection();
             PreparedStatement preparedStatement=connection.prepareStatement(str);
@@ -25,8 +24,6 @@ public class UpdateAppointmentStatus {
             if(num>0){
                 System.out.println(" Appointment Status set to Completed");
             }
-
-
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

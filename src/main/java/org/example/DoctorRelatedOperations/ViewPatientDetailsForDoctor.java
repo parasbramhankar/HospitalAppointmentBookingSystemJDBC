@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ViewPatientDetailsForDoctor {
 
     public void viewPatientDetailsByDoctorId() {
-        String query = "SELECT p.patientId, p.name, p.age, p.gender, p.contact " +
+        String query = "SELECT p.patientId, p.name, p.age, p.gender, p.phone " +
                 "FROM appointment a " +
                 "JOIN patient p ON a.patientId = p.patientId " +
                 "WHERE a.doctorId = ?";
@@ -19,7 +19,7 @@ public class ViewPatientDetailsForDoctor {
             Connection connection = ConnectionDetails.establishConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-            System.out.print("Enter Doctor ID: ");
+
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter the doctor id");
@@ -35,7 +35,7 @@ public class ViewPatientDetailsForDoctor {
                 String name = resultSet.getString("name");
                 int age = resultSet.getInt("age");
                 String gender = resultSet.getString("gender");
-                String contact = resultSet.getString("contact");
+                String contact = resultSet.getString("phone");
 
                 System.out.println("Patient ID: " + patientId +
                         ", Name: " + name +

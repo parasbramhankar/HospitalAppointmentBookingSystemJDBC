@@ -1,0 +1,178 @@
+@startuml
+class org.example.Appointment {
+- int appointmentId
+- int doctorId
+- int patientId
+- LocalDate date
+- LocalTime time
+- String status
++ <<Create>> Appointment(int,int,int,LocalDate,LocalTime,String)
++ int getAppointmentId()
++ void setAppointmentId(int)
++ int getDoctorId()
++ void setDoctorId(int)
++ int getPatientId()
++ void setPatientId(int)
++ LocalDate getDate()
++ void setDate(LocalDate)
++ LocalTime getTime()
++ void setTime(LocalTime)
++ String getStatus()
++ void setStatus(String)
++ String toString()
+}
+
+
+class org.example.AppointmentRelatedOperations.DisplayAppointmentHistory {
++ void appointmentHistory()
+}
+
+class org.example.DoctorRelatedOperations.ViewPatientDetailsForDoctor {
++ void viewPatientDetailsByDoctorId()
+}
+
+class org.example.AppointmentRelatedOperations.DeleteAppointment {
+~ Scanner scanner
++ void deleteAppointment()
+}
+
+
+class org.example.Doctor {
+- int doctorId
+- String name
+- String specialization
+- String phone
+- String email
++ int getDoctorId()
++ void setDoctorId(int)
++ String getName()
++ void setName(String)
++ String getSpecialization()
++ void setSpecialization(String)
++ String getPhone()
++ void setPhone(String)
++ String getEmail()
++ void setEmail(String)
++ String toString()
+}
+
+
+class org.example.AppTest {
++ <<Create>> AppTest(String)
++ {static} Test suite()
++ void testApp()
+}
+
+class org.example.Patient {
+- int patientId
+- String name
+- String gender
+- int age
+- String phone
+- String email
+- String address
++ <<Create>> Patient(int,String,String,int,String,String,String)
++ int getPatientId()
++ void setPatientId(int)
++ String getName()
++ void setName(String)
++ String getGender()
++ void setGender(String)
++ int getAge()
++ void setAge(int)
++ String getPhone()
++ void setPhone(String)
++ String getEmail()
++ void setEmail(String)
++ String getAddress()
++ void setAddress(String)
++ String toString()
+}
+
+
+class org.example.ConnectionDetails {
++ {static} Connection establishConnection()
+}
+
+class org.example.App {
++ {static} void main(String[])
+}
+
+class org.example.PatientService {
++ void performOperations()
+}
+
+class org.example.PatientRelatedOperation.ViewPatientDetails {
++ void viewAllPatientDetails()
++ void viewPatientDetailsByName()
+}
+
+class org.example.AppointmentRelatedOperations.ViewAllAppointment {
++ void displayAppointment()
+}
+
+class org.example.DoctorRelatedOperations.ViewDoctorDetails {
+~ Scanner scanner
++ void viewDoctors()
++ void viewDoctorById()
+}
+
+
+class org.example.AppointmentRelatedOperations.BookAppointment {
+~ Scanner scanner
++ void bookAppointment()
+}
+
+
+class org.example.DoctorRelatedOperations.ViewAppointmentScheduled {
++ void displayAppointmentByDoctorId()
+}
+
+class org.example.PatientRelatedOperation.UpdatePatientDetails {
+~ Scanner scanner
++ void updatePatDetails()
+}
+
+
+class org.example.AppointmentRelatedOperations.RescheduledAppointmentId {
++ void rescheduleAppointment()
+}
+
+class org.example.AppointmentRelatedOperations.UpdateAppointmentStatus {
+~ Scanner scanner
++ void updateAppointment()
+}
+
+
+class org.example.DoctorRelatedOperations.AddNewDoctor {
+~ Scanner scanner
++ void addDoctor()
+}
+
+
+class org.example.DoctorService {
++ void doctorOperation()
+}
+
+class org.example.AdminService {
+~ Scanner scanner
+~ void operations()
+}
+
+
+class org.example.TableCreation.CreateTables {
++ void createDoctorTable()
++ void createPatientTable()
++ void createAppointmentTable()
+}
+
+class org.example.PatientRelatedOperation.AddNewPatient {
+~ Scanner scanner
++ void addNewPatient()
+}
+
+
+
+
+junit.framework.TestCase <|-- org.example.AppTest
+@enduml

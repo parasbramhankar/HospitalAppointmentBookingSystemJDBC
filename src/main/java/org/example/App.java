@@ -15,7 +15,7 @@ public class App
         System.out.println("Welcome to Hospital Appointment Booking System");
         System.out.println("Please select your role:");
         System.out.println("1. Admin");
-        System.out.println("3. Doctor");
+        System.out.println("2. Doctor");
         System.out.println("3. Patient");
         System.out.print("Enter your choice (1,2 or 3): ");
 
