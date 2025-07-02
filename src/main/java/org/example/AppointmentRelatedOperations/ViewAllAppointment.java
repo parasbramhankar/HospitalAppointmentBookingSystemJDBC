@@ -23,6 +23,7 @@ public class ViewAllAppointment {
             ResultSet resultSet = statement.executeQuery(str);
 
             while (resultSet.next()) {
+
                 int id = resultSet.getInt("appointmentId");
                 int doctorId = resultSet.getInt("doctorId");
                 int patientId = resultSet.getInt("patientId");
