@@ -63,7 +63,7 @@ public class AdminService {
                ViewPatientDetails viewDetails=new ViewPatientDetails();
                viewDetails.viewAllPatientDetails();
 
-               System.out.println("Patient details by name: ");
+               System.out.println("Patient details id: ");
                viewDetails.viewPatientDetailsByName();
 
            }

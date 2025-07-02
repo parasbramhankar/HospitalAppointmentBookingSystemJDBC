@@ -40,7 +40,7 @@ public class ViewPatientDetails {
 
     public void viewPatientDetailsByName(){
 
-        String str="select * from patient where name=?";
+        String str="select * from patient where patientId=?";
 
         try{
             Connection connection=ConnectionDetails.establishConnection();

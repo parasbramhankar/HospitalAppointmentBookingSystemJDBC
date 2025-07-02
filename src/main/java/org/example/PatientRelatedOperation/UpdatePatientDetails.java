@@ -12,7 +12,7 @@ public class UpdatePatientDetails {
      Scanner scanner=new Scanner(System.in);
 
      public void updatePatDetails(){
-     String str="update patient email=? where patientId=?";
+         String str = "update patient set email=? where patientId=?";
 
      try {
       Connection connection = ConnectionDetails.establishConnection();
@@ -27,7 +27,7 @@ public class UpdatePatientDetails {
 
       int n = preparedStatement.executeUpdate();
 
-      if (n == 0) {
+      if (n>0) {
           System.out.println("Row updated Successfully");
       }
   }catch (Exception e){
