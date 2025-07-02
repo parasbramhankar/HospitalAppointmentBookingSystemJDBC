@@ -42,6 +42,8 @@ public class AdminService {
                //View all doctors
                ViewDoctorDetails viewDoctorDetails=new ViewDoctorDetails();
                viewDoctorDetails.viewDoctors();
+
+               System.out.println("Doctor details by id");
                viewDoctorDetails.viewDoctorById();
 
            }

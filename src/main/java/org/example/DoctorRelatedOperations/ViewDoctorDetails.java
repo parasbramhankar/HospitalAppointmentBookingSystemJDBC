@@ -49,6 +49,8 @@ public class ViewDoctorDetails {
             Connection connection= ConnectionDetails.establishConnection();
 
             PreparedStatement preparedStatement= connection.prepareStatement(str);
+
+            System.out.println("Enter the doctorId ");
             preparedStatement.setInt(1,scanner.nextInt());
 
             ResultSet resultSet= preparedStatement.executeQuery();

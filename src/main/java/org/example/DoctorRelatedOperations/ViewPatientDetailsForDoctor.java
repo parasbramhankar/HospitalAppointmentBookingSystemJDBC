@@ -21,6 +21,8 @@ public class ViewPatientDetailsForDoctor {
 
             System.out.print("Enter Doctor ID: ");
             Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Enter the doctor id");
             int doctorId = scanner.nextInt();
             preparedStatement.setInt(1, doctorId);
 

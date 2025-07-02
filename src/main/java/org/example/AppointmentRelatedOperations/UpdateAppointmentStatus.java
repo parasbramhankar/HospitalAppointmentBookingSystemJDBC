@@ -16,6 +16,8 @@ public class UpdateAppointmentStatus {
         try{
             Connection connection= ConnectionDetails.establishConnection();
             PreparedStatement preparedStatement=connection.prepareStatement(str);
+
+            System.out.println("Enter the appointment id");
             preparedStatement.setInt(1,scanner.nextInt());
 
             int num= preparedStatement.executeUpdate();

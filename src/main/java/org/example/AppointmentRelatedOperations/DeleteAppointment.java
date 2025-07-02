@@ -17,6 +17,8 @@ public class DeleteAppointment {
             Connection connection=ConnectionDetails.establishConnection();
 
             PreparedStatement preparedStatement= connection.prepareStatement(str);
+            System.out.println("Enter Appointment id");
+
             preparedStatement.setInt(1,scanner.nextInt());
             int n=preparedStatement.executeUpdate();
             if(n==0){
