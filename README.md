@@ -12,11 +12,11 @@ The goal of this project is to automate the traditional appointment system in ho
 
 ## 🛠️ Technologies Used
 
-- **Programming Language:** Java
-- **Database:** PostgreSQL / MySQL
+- **Programming Language:** Java,SQL
+- **Database:** PostgreSQL
 - **Connectivity:** JDBC (Java Database Connectivity)
 - **IDE:** IntelliJ IDEA / Eclipse
-- **Build Tool:** Maven (optional)
+- **Build Tool:** Maven
 - **Version Control:** Git
 
 ---
@@ -83,7 +83,14 @@ The goal of this project is to automate the traditional appointment system in ho
 
 
 ## 🚀 How to Run the Project
+1. Install maven in you local machine
 
-1. Clone the repository:
+2. Clone the repository:
    ```bash
    git clone https://github.com/your-username/hospital-appointment-system.git
+
+3.load the project into the IDE
+
+4. Install the dependencies
+
+5. Run the App.java file to perform the task
