@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.AppointmentRelatedOperations.BookAppointment;
 import org.example.AppointmentRelatedOperations.DeleteAppointment;
+import org.example.AppointmentRelatedOperations.DisplayAppointmentHistory;
 import org.example.AppointmentRelatedOperations.RescheduledAppointmentId;
 import org.example.PatientRelatedOperation.AddNewPatient;
 
@@ -16,7 +17,6 @@ public class PatientService {
         System.out.println("3. cancel the appointment: ");
         System.out.println("4. reschedule the appointment: ");
         System.out.println("5. view Appointment history: ");
-        System.out.println("6. view and edit the personal details: ");
         Scanner scanner=new Scanner(System.in);
         int choice= scanner.nextInt();
 
@@ -44,8 +44,8 @@ public class PatientService {
             }
             case 5->{
                 //Display appointment history
-
-
+                DisplayAppointmentHistory displayAppointmentHistory=new DisplayAppointmentHistory();
+                displayAppointmentHistory.appointmentHistory();
             }
         }
     }
