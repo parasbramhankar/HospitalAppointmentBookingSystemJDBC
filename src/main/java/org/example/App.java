@@ -29,10 +29,11 @@ public class App
                    break;
             case 2:
                   DoctorService doctorService=new DoctorService();
-
+                  doctorService.doctorOperation();
                 break;
             case 3:
                 PatientService patientService=new PatientService();
+                patientService.performOperations();
                 break;
         }
     }
